@@ -14,8 +14,8 @@ const App = () => {
 
   function handleChange(e, id) {
     const { name, value } = e.target;
-    editedRows.current.add(id);
     data[id - 1][name] = name == "name" ? value : +value;
+    editedRows.current.add(id);
     setData(data);
   }
 
