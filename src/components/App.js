@@ -34,7 +34,7 @@ const App = () => {
             {data.map(({ id, name, age }) => (
               <tr key={id}>
                 <td>{id}</td>
-                <td><input defaultValue={name} onChange={(e) => handleChange(e, id)} name="name"/></td>
+                <td><input defaultValue={name} type="text" onChange={(e) => handleChange(e, id)} name="name"/></td>
                 <td><input defaultValue={age} type="number" onChange={(e) => handleChange(e, id)} name="age"/></td>
               </tr>
             ))}
