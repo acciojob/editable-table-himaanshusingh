@@ -15,7 +15,7 @@ const App = () => {
   function handleChange(e, id) {
     const { name, value } = e.target;
     editedRows.current.add(id);
-    data[id][name] = value;
+    data[id - 1][name] = name == "name" ? value : +value;
     setData(data);
   }
 
@@ -34,8 +34,8 @@ const App = () => {
             {data.map(({ id, name, age }) => (
               <tr key={id}>
                 <td>{id}</td>
-                <td><input defaultValue={name} type="text" onChange={(e) => handleChange(e, id)} name="name"/></td>
-                <td><input defaultValue={age} type="number" onChange={(e) => handleChange(e, id)} name="age"/></td>
+                <td><input defaultValue={name} type="text" onChange={(e) => handleChange(e, id)} name="name" /></td>
+                <td><input defaultValue={age} type="number" onChange={(e) => handleChange(e, id)} name="age" /></td>
               </tr>
             ))}
           </tbody>
